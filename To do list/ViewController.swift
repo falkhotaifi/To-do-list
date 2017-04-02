@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var tasks: [Task] = []
+    var SelectedIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        SelectedIndex = indexPath.row
+        let task = tasks[indexPath.row]
+        performSegue(withIdentifier: "selectedTaskSegue", sender: task)
+    }
+    
     func makeTasks() -> [Task]{
         let task1 = Task()
         task1.name = "Walk the dog"
@@ -57,6 +65,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return [task1,task2,task3]
     }
+    
+    @IBAction func addSegue(_ sender: Any) {
+        performSegue(withIdentifier: "addSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addSegue" {
+            let nextViewController = segue.destination as! CreateTaskViewController
+            nextViewController.previousViewController = self
+        }
+        if segue.identifier == "selectedTaskSegue" {
+            let nextViewController = segue.destination as! SelectedTaskViewController
+            nextViewController.task = sender as! Task
+            nextViewController.previousViewController = self
+        }
+    }
+    
+    
 
 }
 
