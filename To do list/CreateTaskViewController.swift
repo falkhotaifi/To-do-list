@@ -11,6 +11,7 @@ import UIKit
 class CreateTaskViewController: UIViewController {
     @IBOutlet weak var taskName: UITextField!
     @IBOutlet weak var importantSwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var previousViewController = ViewController()
 
@@ -28,6 +29,7 @@ class CreateTaskViewController: UIViewController {
         let task = Task(context: context)
         task.name = taskName.text!
         task.important = importantSwitch.isOn
+        //task.dateOfTask = datePicker.calendar
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         // Pop back

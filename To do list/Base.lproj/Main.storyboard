@@ -22,9 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xss-Ry-76m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="140" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xss-Ry-76m">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.40747937817258884" green="0.40747937817258884" blue="0.40747937817258884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexColor" red="0.94160453680203049" green="0.94160453680203049" blue="0.94160453680203049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,8 +38,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To do list" id="W1I-MF-TPf">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="2T8-Xk-DVR"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="2T8-Xk-DVR"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="539-kW-XMC">
+                            <color key="tintColor" red="0.085203838832487278" green="0.085203838832487278" blue="0.085203838832487278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addSegue:" destination="BYZ-38-t0r" id="PhI-ae-DgM"/>
                             </connections>
@@ -86,8 +89,14 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-cJ-Zzt">
                                 <rect key="frame" x="163" y="236" width="51" height="31"/>
                             </switch>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-FM-ggk">
+                                <rect key="frame" x="27" y="275" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="512866666.88122702">
+                                    <!--2017-04-02 22:57:46 +0000-->
+                                </date>
+                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAQ-fM-TzC">
-                                <rect key="frame" x="172.5" y="297" width="30" height="30"/>
+                                <rect key="frame" x="172" y="516" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButton:" destination="ZFs-Tx-Nks" eventType="touchUpInside" id="iw9-ou-Mha"/>
@@ -102,15 +111,21 @@
                             <constraint firstItem="SFm-F6-oOg" firstAttribute="leading" secondItem="1MM-lM-ccZ" secondAttribute="leadingMargin" constant="40" id="Kja-CN-SsS"/>
                             <constraint firstItem="vB2-cJ-Zzt" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="Nbu-I7-tAA"/>
                             <constraint firstItem="vB2-cJ-Zzt" firstAttribute="top" secondItem="cc3-Hp-eV6" secondAttribute="bottom" constant="10" id="QOY-jf-Vod"/>
+                            <constraint firstItem="ldh-FM-ggk" firstAttribute="top" secondItem="vB2-cJ-Zzt" secondAttribute="bottom" constant="8" id="Qoy-nJ-Gof"/>
                             <constraint firstItem="cc3-Hp-eV6" firstAttribute="top" secondItem="SFm-F6-oOg" secondAttribute="bottom" constant="30" id="Rg0-ei-VzN"/>
                             <constraint firstItem="VMc-6I-F2Z" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="SG7-AS-est"/>
+                            <constraint firstItem="ldh-FM-ggk" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="SvI-fT-cHY"/>
+                            <constraint firstItem="GAQ-fM-TzC" firstAttribute="centerX" secondItem="ldh-FM-ggk" secondAttribute="centerX" id="VWS-tz-sdD"/>
                             <constraint firstItem="cc3-Hp-eV6" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="ai3-cb-Ux5"/>
-                            <constraint firstItem="GAQ-fM-TzC" firstAttribute="top" secondItem="vB2-cJ-Zzt" secondAttribute="bottom" constant="30" id="h3X-Q3-j5J"/>
+                            <constraint firstItem="GAQ-fM-TzC" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="hKp-uD-mmU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SFm-F6-oOg" secondAttribute="trailing" constant="40" id="k64-Cb-hRW"/>
                             <constraint firstItem="SFm-F6-oOg" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="qWm-FE-RBS"/>
+                            <constraint firstItem="GAQ-fM-TzC" firstAttribute="centerX" secondItem="1MM-lM-ccZ" secondAttribute="centerX" id="wRQ-Fx-FcB"/>
+                            <constraint firstItem="GAQ-fM-TzC" firstAttribute="top" secondItem="ldh-FM-ggk" secondAttribute="bottom" constant="25" id="zE5-qd-2xU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="ldh-FM-ggk" id="FNs-by-IJY"/>
                         <outlet property="importantSwitch" destination="vB2-cJ-Zzt" id="ts6-Um-BkM"/>
                         <outlet property="taskName" destination="SFm-F6-oOg" id="02G-0R-vWb"/>
                     </connections>
